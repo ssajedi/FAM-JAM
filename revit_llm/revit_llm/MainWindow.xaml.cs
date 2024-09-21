@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Microsoft.Win32;
 using Newtonsoft.Json;
 using OpenAI_API;
 using OpenAI_API.Chat;
@@ -28,6 +29,12 @@ namespace revit_llm
         {
             InitializeComponent();
             GetChatGPTResponseAsync();
+        }
+
+        static string EncodeImage(string imagePath)
+        {
+            byte[] imageBytes = System.IO.File.ReadAllBytes(imagePath);
+            return Convert.ToBase64String(imageBytes);
         }
 
         string ReadKeyFromText()
@@ -61,6 +68,35 @@ namespace revit_llm
 
         }
 
+
+        private string OpenImageFileDialog()
+        {
+            // Create an instance of OpenFileDialog
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // Set filter for file types (all common image formats)
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif;*.tiff;*.ico|All Files|*.*";
+
+            // Set a title for the dialog
+            openFileDialog.Title = "Select an Image File";
+
+            // Show the dialog and check if the user selected a file
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Get the selected file's path
+                string filePath = openFileDialog.FileName;
+
+                return filePath;
+
+            }
+            else
+            {
+                return "";
+
+            }
+        }
+
+
         private async Task GetChatGPTResponseAsync()
         {
             string prompt = "What is the capital of France?";
@@ -68,14 +104,25 @@ namespace revit_llm
             // Assuming you have a method GetChatGPTResponse to fetch the result.
             string key = ReadKeyFromText();
 
-            string result = await GetChatGPTResponse(prompt, ReadKeyFromText());
+            string filePath = OpenImageFileDialog();
 
-            // Output the result
-            Console.WriteLine(result);
+            if (!string.IsNullOrEmpty(filePath))
+            {
+                string result = await GetChatGPTResponse(prompt, ReadKeyFromText(), filePath);
+
+                Console.WriteLine(result);
+            }
+
+
         }
 
-        public static async Task<string> GetChatGPTResponse(string prompt, string apiKey)
+        public static async Task<string> GetChatGPTResponse(string prompt, string apiKey, string imagePath)
         {
+
+
+            // Getting the base64 string of the image
+            string base64Image = EncodeImage(imagePath);
+
             using (HttpClient client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
@@ -93,14 +140,14 @@ namespace revit_llm
                                 new
                                 {
                                     type = "text",
-                                    text = "What's in this image?"
+                                    text = "Can you extract data such as Width, Height, Length, as Product Information in a tabular format that can be downloaded as excel"
                                 },
                                 new
                                 {
                                     type = "image_url",
                                     image_url = new
                                     {
-                                        url = "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                        url = $"data:image/jpeg;base64,{base64Image}"
                                     }
                                 }
                             }
