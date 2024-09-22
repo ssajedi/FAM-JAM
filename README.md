@@ -21,6 +21,15 @@ To use this repository please follow these steps:
 # Demo 
 Please refer to the following video for a demonstration of how FAM JAM.
 
+# Future work
+For future work, we are focusing on several key areas of development to enhance system performance and usability even further:
+
+* Further expansion of the .rfa family database: We plan to continue growing our .rfa repository, providing even more comprehensive options for users to streamline design processes.
+Advanced scalability solutions: We are exploring new ways to ensure the platform can support even larger workloads and more complex projects, improving both speed and reliability as usage scales up.
+* Enhanced prompting mechanisms: Future updates will focus on making prompts even more intuitive, with the goal of providing instant access to critical tools with minimal user input.
+* AI-driven insights for asset selection: We aim to refine our AI semantic search capabilities, allowing for even smarter asset recommendations based on user preferences, past projects, and evolving design trends.
+* Improved credential management: Upcoming improvements will include more sophisticated security protocols and user-friendly interfaces for managing credentials, ensuring maximum security without compromising convenience.
+
 # Team
 
 | ![Nehansh Saxena](https://github.com/ssajedi/FAM-JAM/blob/main/assets/nehansh.jpg) | ![Frank(Xu) Li](https://github.com/ssajedi/FAM-JAM/blob/main/assets/Frank.jpg) | ![Seyedomid Sajedi](https://github.com/ssajedi/FAM-JAM/blob/main/assets/Omid.jpg) |
