@@ -12,11 +12,16 @@ In order to use FAM JAM, you will require:
   
 # Getting Started
 To use this repository please follow these steps:
+### Part I
 * Clone the repository using <git>
 * Create an OpenAI API key
 * Create secret.txt and add the API Key.
 * Place secret.txt inside the main project directory. 
-* [To be added by Frank]
+### Part II (Revit):
+* Locate the repository on your machine.
+* Extract <plugin-files.zip>
+
+
 
 # Demo 
 Please refer to the following video for a demonstration of how FAM JAM.
