@@ -15,6 +15,7 @@ using System.Windows;
 using System.Security.Cryptography;
 using System.Windows.Controls;
 using System.IO;
+using System.Threading;
 
 namespace revit_llm
 {
@@ -27,15 +28,15 @@ namespace revit_llm
 
         public List<Furniture> Furnitures = new List<Furniture>();
 
-      public  static string relativeFolder;
+        public static string relativeFolder;
 
         public FamJamManager(UIApplication app, Document doc, string rootFolder)
         {
-            //MessageBox.Show("hERE2");
-            _event = ExternalEvent.Create(this);
-            //MessageBox.Show("hERE3");
-            _application = app;
            
+            _event = ExternalEvent.Create(this);
+          
+            _application = app;
+
 
         }
 
@@ -50,17 +51,15 @@ namespace revit_llm
         public void Execute(UIApplication app)
         {
 
-            Transaction tran = new Transaction(_doc, "FamJam");
-
             try
             {
 
-                DoAction(tran);
+                DoAction(null);
 
             }
             catch (Exception ex)
             {
-                if (tran.HasStarted()) { tran.RollBack(); }
+                //if (tran.HasStarted()) { tran.RollBack(); }
                 MessageBox.Show("Fail to create family: " + ex.Message + ex.StackTrace);
                 return;
             }
@@ -81,23 +80,21 @@ namespace revit_llm
 
         public void DoAction(Transaction tran)
         {
-
-            tran.Start();
-
+            //messagebox.Show("Total Furnituries: " + Furnitures.Count);
             string[] rfaFiles = Directory.GetFiles(relativeFolder, "*.rfa");
-            MessageBox.Show("Folder: "+ relativeFolder);
-            MessageBox.Show("Total count: " + GetAllFamilies().Count.ToString());
+            //messagebox.Show("Folder: " + relativeFolder);
+            //messagebox.Show("Total count: " + GetAllFamilies().Count.ToString());
 
             foreach (var file in GetAllFamilies())
             {
                 Family family;
                 if (_doc.LoadFamily(file, out family))
                 {
-                    //TaskDialog.Show("Load Family", $"Successfully loaded family: {Path.GetFileName(filePath)}");
+
                 }
                 else
                 {
-                    // TaskDialog.Show("Load Family", $"Failed to load family: {Path.GetFileName(filePath)}");
+
                 }
             }
 
@@ -105,10 +102,11 @@ namespace revit_llm
             var location = new XYZ();
 
             var familySymbols = GetFrameTypes(_doc);
-            MessageBox.Show("here 2");
+            tran = new Transaction(_doc, "Activating Symbol");
+            tran.Start();
             foreach (var familySymbol in familySymbols)
             {
-                MessageBox.Show(familySymbol.FamilyName);
+
 
                 if (!familySymbol.IsActive)
                 {
@@ -117,39 +115,48 @@ namespace revit_llm
 
                 }
             }
-            MessageBox.Show("Furniture count: "+ Furnitures.Count);
+            tran.Commit();
+
+            if (familySymbols.Count < 1)
+            {
+                throw new Exception("Families not loaded correctly");
+            }
+
+
             for (int i = 0; i <= Furnitures.Count - 1; i++)
             {
                 var currentFurniture = Furnitures[i];
 
                 var familySymbol = familySymbols.Find(x => x.FamilyName == currentFurniture.Type);
 
-                //MessageBox.Show(familySymbols[0].FamilyName);
-                //MessageBox.Show(currentFurniture.Type);
-
                 if (familySymbol == null)
                 {
-                    familySymbol = familySymbols[i];
-                    //MessageBox.Show($"Didn't find the symbol that matches the name {familySymbol}");
-                }
+                    familySymbol = familySymbols[0];
 
+                }
 
                 int rowNumber = i / numberOfInstancesEARow;
 
                 int positionNumber = i % numberOfInstancesEARow;
 
                 location = new XYZ(spacing * positionNumber, spacing * rowNumber, 0);
-
-                FamilyInstance instance = _application.ActiveUIDocument.Document.Create.NewFamilyInstance(location, familySymbol, null, StructuralType.NonStructural);
-
-                SetFamilyInstanceParameters(instance, currentFurniture.W / 12.0, currentFurniture.L / 12.0, currentFurniture.H / 12.0);
-
+                try
+                {
+                    tran = new Transaction(_doc, "Adding Furniture");
+                    tran.Start();
+                    FamilyInstance instance = _application.ActiveUIDocument.Document.Create.NewFamilyInstance(location, familySymbol, null, StructuralType.NonStructural);
+                    SetFamilyInstanceParameters(instance, currentFurniture.W / 12.0, currentFurniture.L / 12.0, currentFurniture.H / 12.0);
+                    tran.Commit();
+                }
+                catch (Exception ex)
+                {
+                    if (tran != null && tran.HasStarted()) { tran.RollBack(); }
+                    //messagebox.Show("Fail to create family: " + ex.Message + ex.StackTrace);
+                    return;
+                }
+                _application.ActiveUIDocument.RefreshActiveView();
+                Thread.Sleep(2000);
             }
-
-
-
-
-            tran.Commit();
 
         }
         // Create an instance of the Random class

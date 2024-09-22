@@ -21,7 +21,8 @@ using Newtonsoft.Json;
 using Ghostscript.NET.Rasterizer;
 using ImageMagick;
 using revit_llm.Properties;
-
+using PdfiumViewer;
+using Autodesk.Revit.DB.Mechanical;
 
 namespace revit_llm
 {
@@ -70,17 +71,17 @@ namespace revit_llm
                 var ii = furniture.W;
             }
 
-            //string name = GetStringNames();
+  
 
         }
 
         public MainWindow(UIApplication application, UIControlledApplication controlledApplication)
         {
-            //MessageBox.Show("HERE 1");
+    
             InitializeComponent();
-            //MessageBox.Show("hERE");
+
             _application = application;
-            //MessageBox.Show("hERE1");
+   
             _famJamManager = new FamJamManager(application, _doc, txtRootFolder.Text.Trim());
         }
 
@@ -119,50 +120,22 @@ namespace revit_llm
 
         }
 
-
-        //private string OpenImageFileDialog()
-        //{
-        //    // Create an instance of OpenFileDialog
-        //    OpenFileDialog openFileDialog = new OpenFileDialog();
-
-        //    // Set filter for file types (all common image formats)
-        //    openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif;*.tiff;*.ico|All Files|*.*";
-
-        //    // Set a title for the dialog
-        //    openFileDialog.Title = "Select an Image File";
-
-        //    // Show the dialog and check if the user selected a file
-        //    if (openFileDialog.ShowDialog() == true)
-        //    {
-        //        // Get the selected file's path
-        //        string filePath = openFileDialog.FileName;
-
-        //        return filePath;
-
-        //    }
-        //    else
-        //    {
-        //        return "";
-
-        //    }
-        //}
-
-
         private async Task GetChatGPTResponseAsync(string rootFolder)
         {
             string prompt = "What is the capital of France?";
 
-            // Assuming you have a method GetChatGPTResponse to fetch the result.
+
             string key = ReadKeyFromText();
+            List<Furniture> furnitures = new List<Furniture>();
+            var imagesList = PDFToImage();
+            _famJamManager.Furnitures.Clear();
 
-            //string filePath = OpenImageFileDialog();
-
-            var images = PDFToImage();
-
-            if (images.Count > 0)
+            foreach (var images in imagesList)
             {
-                List<Furniture> furnitures = new List<Furniture>();
-       
+                furnitures.Clear();
+                if (images.Count > 0)
+                {
+
                     string result = await GetChatGPTResponse(prompt, ReadKeyFromText(), images, rootFolder);
                     var furniture = ToFurniture(result);
                     Console.WriteLine("Current JSON Furniture: " + result);
@@ -175,20 +148,16 @@ namespace revit_llm
                         furnitures.Add(furniture);
                         Console.WriteLine($"Furniture okay");
                     }
-                    MessageBox.Show(result);
-                
 
-                _famJamManager.Furnitures.Clear();
-                MessageBox.Show("furnitures count!!!: "+ furnitures.Count);
-                _famJamManager.Furnitures.AddRange(furnitures);
-                FamJamManager.relativeFolder = txtRootFolder.Text.Trim() + @"\database\revit_reference_geometry";
 
-                MessageBox.Show("HERE");
-                _famJamManager._event.Raise();
+                    _famJamManager.Furnitures.AddRange(furnitures);
 
+                    FamJamManager.relativeFolder = txtRootFolder.Text.Trim() + @"\database\revit_reference_geometry";
+
+                }
             }
 
-
+            _famJamManager._event.Raise();
 
         }
 
@@ -233,80 +202,48 @@ namespace revit_llm
         }
 
 
-        List<string> PDFToImage()
+        
+
+        public List<List<string>> PDFToImage()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            var rootFolder = txtRootFolder.Text.ToString().Trim();
 
-
-            openFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
-            openFileDialog.Title = "Select a PDF file";
-
-            if (openFileDialog.ShowDialog() == true)
+            if (!Directory.Exists(rootFolder))
             {
+                throw new Exception("The root folder provided doesn't exist");
+            }
 
-                List<string> imagines = new List<string>();
+            string pdfFolder = rootFolder + @"\database\Specs";
 
-                string pdfPath = openFileDialog.FileName;
-                string outputFolder = System.IO.Path.GetDirectoryName(pdfPath);
+            // Get all PDF files in the selected folder
+            string[] pdfFiles = Directory.GetFiles(pdfFolder, "*.pdf");
 
-                using (var document = PdfiumViewer.PdfDocument.Load(pdfPath))
+            List<List<string>> allImages = new List<List<string>>();
+
+            foreach (var pdfFile in pdfFiles)
+            {
+                List<string> images = new List<string>();
+                string outputFolder = Path.GetDirectoryName(pdfFile);
+
+                using (var document = PdfDocument.Load(pdfFile))
                 {
                     for (int i = 0; i < document.PageCount; i++)
                     {
-                        using (var image = document.Render(i, 2000, 2000, true)) // 300 DPI
+                        using (var image = document.Render(i, 2000, 2000, true)) // Render at 2000x2000px
                         {
-                            string outputPath = System.IO.Path.Combine(outputFolder, $"page_{i + 1}.png");
-                            image.Save(outputPath, ImageFormat.Png);
-                            imagines.Add(EncodeImage(outputPath));
+                            string outputPath = Path.Combine(outputFolder, $"{Path.GetFileNameWithoutExtension(pdfFile)}_page_{i + 1}.png");
+                            image.Save(outputPath, ImageFormat.Png);  // Save image as PNG
+                            images.Add(EncodeImage(outputPath));  // Add image to the list
                         }
                     }
                 }
 
-                //using (var rasterizer = new GhostscriptRasterizer())
-                //{
-                //    rasterizer.Open(pdfPath);
-
-                //    for (int i = 1; i <= rasterizer.PageCount; i++)
-                //    {
-                //        // Render the page to an image
-                //        using (var image = rasterizer.GetPage(300, i)) // 300 DPI
-                //        {
-                //            string outputPath = System.IO.Path.Combine(outputFolder, $"page_{i}.png");
-                //            image.Save(outputPath, ImageFormat.Png); // Save as PNG or any desired format
-                //            imagines.Add(EncodeImage(outputPath));
-                //            Console.WriteLine($"Saved: {outputPath}");
-                //        }
-                //    }
-                //}
-
-
-                //MagickReadSettings settings = new MagickReadSettings()
-                //{
-                //    Density = new Density(300) // Set the resolution (DPI)
-                //};
-
-                //using (MagickImageCollection images = new MagickImageCollection())
-                //{
-                //    images.Read(pdfPath, settings);
-
-                //    Loop through pages
-                //    int page = 1;
-                //    foreach (MagickImage image in images)
-                //    {
-                //        Save each page as a PNG image
-                //        image.Write(outputFolder + $"_Page{page}.png");
-                //        page++;
-                //    }
-                //}
-
-                return imagines;
-                //MessageBox.Show("PDF pages converted to images.");
+                allImages.Add(images);  // Add the image list of current PDF file to the main list
             }
 
-            return new List<string>();
+            return allImages;
 
         }
-
 
         static object[] CreateContent(List<string> images, string rootFolder)
         {
@@ -348,42 +285,14 @@ namespace revit_llm
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+               //messagebox.Show(ex.Message + ex.StackTrace);
             }
 
-            //try
-            //{
-            //    GetStringNames(txtRootFolder.Text.Trim());
-            //    var furniture = ToFurniture(jsonString);
-            //    _famJamManager.Furnitures.Clear();
-            //    _famJamManager.Furnitures.Add(furniture);
-            //    _famJamManager._event.Raise();
-            //}
-            //catch (Exception ex)
-            //{
-            //    //MessageBox.Show(ex.Message + ex.StackTrace);
-            //}
+  
 
         }
 
-        static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
-        {
-            MessageBox.Show(args.Name);
-
-
-            if (args.Name.Contains("pdfium"))
-            {
-
-                //Load my Assembly 
-                Assembly assem = Assembly.LoadFrom(new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName + "\\pdfium.dll");
-                MessageBox.Show(new FileInfo(Assembly.GetExecutingAssembly().Location).DirectoryName + "\\pdfium.dll");
-                
-                if (assem != null)
-                    return assem;
-            }
-            return Assembly.GetExecutingAssembly();
-
-        }
+     
         static string EncodeImage(Image image)
         {
             using (MemoryStream memoryStream = new MemoryStream())

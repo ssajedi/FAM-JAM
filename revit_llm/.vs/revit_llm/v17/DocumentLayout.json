@@ -3,28 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C710D5C6-03F5-43B5-94CF-8EB44A34A91F}|revit_llm\\revit_llm.csproj|C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revit_llm\\famjammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C710D5C6-03F5-43B5-94CF-8EB44A34A91F}|revit_llm\\revit_llm.csproj|solutionrelative:revit_llm\\famjammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C710D5C6-03F5-43B5-94CF-8EB44A34A91F}|revit_llm\\revit_llm.csproj|c:\\users\\frankl\\documents\\github\\revit_llm\\revit_llm\\revit_llm\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C710D5C6-03F5-43B5-94CF-8EB44A34A91F}|revit_llm\\revit_llm.csproj|solutionrelative:revit_llm\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C710D5C6-03F5-43B5-94CF-8EB44A34A91F}|revit_llm\\revit_llm.csproj|c:\\users\\frankl\\documents\\github\\revit_llm\\revit_llm\\revit_llm\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C710D5C6-03F5-43B5-94CF-8EB44A34A91F}|revit_llm\\revit_llm.csproj|solutionrelative:revit_llm\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C710D5C6-03F5-43B5-94CF-8EB44A34A91F}|revit_llm\\revit_llm.csproj|c:\\users\\frankl\\documents\\github\\revit_llm\\revit_llm\\revit_llm\\famjammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C710D5C6-03F5-43B5-94CF-8EB44A34A91F}|revit_llm\\revit_llm.csproj|solutionrelative:revit_llm\\famjammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AADE39-7D1C-4CEB-89B7-C98C4D2C1C0C}|RevitPlugIn\\RevitPlugIn.csproj|c:\\users\\frankl\\documents\\github\\revit_llm\\revit_llm\\revitplugin\\famjamtool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{91AADE39-7D1C-4CEB-89B7-C98C4D2C1C0C}|RevitPlugIn\\RevitPlugIn.csproj|C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revitplugin\\famjamtool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91AADE39-7D1C-4CEB-89B7-C98C4D2C1C0C}|RevitPlugIn\\RevitPlugIn.csproj|solutionrelative:revitplugin\\famjamtool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91AADE39-7D1C-4CEB-89B7-C98C4D2C1C0C}|RevitPlugIn\\RevitPlugIn.csproj|c:\\users\\frankl\\documents\\github\\revit_llm\\revit_llm\\revitplugin\\mainentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C710D5C6-03F5-43B5-94CF-8EB44A34A91F}|revit_llm\\revit_llm.csproj|C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revit_llm\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C710D5C6-03F5-43B5-94CF-8EB44A34A91F}|revit_llm\\revit_llm.csproj|solutionrelative:revit_llm\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AADE39-7D1C-4CEB-89B7-C98C4D2C1C0C}|RevitPlugIn\\RevitPlugIn.csproj|C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revitplugin\\mainentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91AADE39-7D1C-4CEB-89B7-C98C4D2C1C0C}|RevitPlugIn\\RevitPlugIn.csproj|solutionrelative:revitplugin\\mainentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91AADE39-7D1C-4CEB-89B7-C98C4D2C1C0C}|RevitPlugIn\\RevitPlugIn.csproj|c:\\users\\frankl\\documents\\github\\revit_llm\\revit_llm\\revitplugin\\resource1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|revit_llm||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AADE39-7D1C-4CEB-89B7-C98C4D2C1C0C}|RevitPlugIn\\RevitPlugIn.csproj|C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revitplugin\\resource1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
       "RelativeMoniker": "D:0:0:{91AADE39-7D1C-4CEB-89B7-C98C4D2C1C0C}|RevitPlugIn\\RevitPlugIn.csproj|solutionrelative:revitplugin\\resource1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C710D5C6-03F5-43B5-94CF-8EB44A34A91F}|revit_llm\\revit_llm.csproj|c:\\users\\frankl\\documents\\github\\revit_llm\\revit_llm\\revit_llm\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|a54ad834-9219-4aa6-b589-607af21c3e26"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +40,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,39 +60,51 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FamJamManager.cs",
-              "DocumentMoniker": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revit_llm\\FamJamManager.cs",
-              "RelativeDocumentMoniker": "revit_llm\\FamJamManager.cs",
-              "ToolTip": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revit_llm\\FamJamManager.cs",
-              "RelativeToolTip": "revit_llm\\FamJamManager.cs",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAowGsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-22T01:07:57.14Z",
+              "DocumentIndex": 5,
+              "Title": "revit_llm",
+              "DocumentMoniker": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revit_llm\\revit_llm.csproj",
+              "RelativeDocumentMoniker": "revit_llm\\revit_llm.csproj",
+              "ToolTip": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revit_llm\\revit_llm.csproj",
+              "RelativeToolTip": "revit_llm\\revit_llm.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-09-22T16:35:33.818Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revit_llm\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "revit_llm\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revit_llm\\MainWindow.xaml.cs",
-              "RelativeToolTip": "revit_llm\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAEwBAAAAAAAAAAAwwFgBAAASAAAA",
+              "ToolTip": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revit_llm\\MainWindow.xaml.cs*",
+              "RelativeToolTip": "revit_llm\\MainWindow.xaml.cs*",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowJsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-21T20:58:18.893Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "FamJamManager.cs",
+              "DocumentMoniker": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revit_llm\\FamJamManager.cs",
+              "RelativeDocumentMoniker": "revit_llm\\FamJamManager.cs",
+              "ToolTip": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revit_llm\\FamJamManager.cs*",
+              "RelativeToolTip": "revit_llm\\FamJamManager.cs*",
+              "ViewState": "AQIAANcAAAAAAAAAAIAwwJ8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T01:07:57.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "FamJamTool.cs",
               "DocumentMoniker": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\RevitPlugIn\\FamJamTool.cs",
               "RelativeDocumentMoniker": "RevitPlugIn\\FamJamTool.cs",
               "ToolTip": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\RevitPlugIn\\FamJamTool.cs",
               "RelativeToolTip": "RevitPlugIn\\FamJamTool.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABsAAAANAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwBsAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-22T00:05:24.579Z",
               "EditorCaption": ""
@@ -99,26 +117,25 @@
               "RelativeDocumentMoniker": "RevitPlugIn\\MainEntry.cs",
               "ToolTip": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\RevitPlugIn\\MainEntry.cs",
               "RelativeToolTip": "RevitPlugIn\\MainEntry.cs",
-              "ViewState": "AQIAAIQAAAAAAAAAAAAAwIkAAABIAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAuwBkAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-21T23:43:18.6Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Resource1.resx",
               "DocumentMoniker": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\RevitPlugIn\\Resource1.resx",
               "RelativeDocumentMoniker": "RevitPlugIn\\Resource1.resx",
               "ToolTip": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\RevitPlugIn\\Resource1.resx",
               "RelativeToolTip": "RevitPlugIn\\Resource1.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2024-09-22T06:03:10.837Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-22T06:03:10.837Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\FrankL\\Documents\\GitHub\\revit_llm\\revit_llm\\revit_llm\\MainWindow.xaml",
               "RelativeDocumentMoniker": "revit_llm\\MainWindow.xaml",

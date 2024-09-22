@@ -23,7 +23,7 @@ namespace RevitPlugIn
     [Autodesk.Revit.Attributes.Journaling(Autodesk.Revit.Attributes.JournalingMode.NoCommandData)]
     public class MainEntry : IExternalApplication
     {
-        const string TabName = "AECHeck";
+        const string TabName = "FamJam";
 
         const string docPanelName = "Documents";
 
