@@ -1,4 +1,6 @@
 # FAM-JAM
+https://github.com/ssajedi/FAM-JAM/blob/main/assets/Logo.svg
+<img src="https://github.com/ssajedi/FAM-JAM/blob/main/assets/Logo.svg" width="200">
 #### Intelligent Spec Management for Revit
 
 FAM JAM is a Revit Plugin developed during the 2024 [AECTech Hackathon](https://www.aectech.us/la-event). 
