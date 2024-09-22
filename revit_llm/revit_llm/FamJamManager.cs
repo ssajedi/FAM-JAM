@@ -27,15 +27,15 @@ namespace revit_llm
 
         public List<Furniture> Furnitures = new List<Furniture>();
 
-        static string relativeFolder;
+      public  static string relativeFolder;
 
         public FamJamManager(UIApplication app, Document doc, string rootFolder)
         {
-           //MessageBox.Show("hERE2");
+            //MessageBox.Show("hERE2");
             _event = ExternalEvent.Create(this);
-           //MessageBox.Show("hERE3");
+            //MessageBox.Show("hERE3");
             _application = app;
-            relativeFolder = rootFolder+ @"\database\revit_reference_geometry";
+           
 
         }
 
@@ -61,7 +61,7 @@ namespace revit_llm
             catch (Exception ex)
             {
                 if (tran.HasStarted()) { tran.RollBack(); }
-               //MessageBox.Show("Fail to create family: " + ex.Message + ex.StackTrace);
+                MessageBox.Show("Fail to create family: " + ex.Message + ex.StackTrace);
                 return;
             }
 
@@ -84,6 +84,10 @@ namespace revit_llm
 
             tran.Start();
 
+            string[] rfaFiles = Directory.GetFiles(relativeFolder, "*.rfa");
+            MessageBox.Show("Folder: "+ relativeFolder);
+            MessageBox.Show("Total count: " + GetAllFamilies().Count.ToString());
+
             foreach (var file in GetAllFamilies())
             {
                 Family family;
@@ -104,7 +108,7 @@ namespace revit_llm
             MessageBox.Show("here 2");
             foreach (var familySymbol in familySymbols)
             {
-                //MessageBox.Show(familySymbol.FamilyName);
+                MessageBox.Show(familySymbol.FamilyName);
 
                 if (!familySymbol.IsActive)
                 {
@@ -113,20 +117,20 @@ namespace revit_llm
 
                 }
             }
-            MessageBox.Show("here 3");
+            MessageBox.Show("Furniture count: "+ Furnitures.Count);
             for (int i = 0; i <= Furnitures.Count - 1; i++)
             {
                 var currentFurniture = Furnitures[i];
 
                 var familySymbol = familySymbols.Find(x => x.FamilyName == currentFurniture.Type);
 
-               //MessageBox.Show(familySymbols[0].FamilyName);
-               //MessageBox.Show(currentFurniture.Type);
+                //MessageBox.Show(familySymbols[0].FamilyName);
+                //MessageBox.Show(currentFurniture.Type);
 
                 if (familySymbol == null)
                 {
                     familySymbol = familySymbols[i];
-                   //MessageBox.Show($"Didn't find the symbol that matches the name {familySymbol}");
+                    //MessageBox.Show($"Didn't find the symbol that matches the name {familySymbol}");
                 }
 
 

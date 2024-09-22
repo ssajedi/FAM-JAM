@@ -162,9 +162,8 @@ namespace revit_llm
             if (images.Count > 0)
             {
                 List<Furniture> furnitures = new List<Furniture>();
-                foreach (var image in images)
-                {
-                    string result = await GetChatGPTResponse(prompt, ReadKeyFromText(), new List<string>() { image }, rootFolder);
+       
+                    string result = await GetChatGPTResponse(prompt, ReadKeyFromText(), images, rootFolder);
                     var furniture = ToFurniture(result);
                     Console.WriteLine("Current JSON Furniture: " + result);
                     if (furniture == null)
@@ -176,12 +175,14 @@ namespace revit_llm
                         furnitures.Add(furniture);
                         Console.WriteLine($"Furniture okay");
                     }
-                    //MessageBox.Show(result);
-                }
+                    MessageBox.Show(result);
+                
 
                 _famJamManager.Furnitures.Clear();
-
+                MessageBox.Show("furnitures count!!!: "+ furnitures.Count);
                 _famJamManager.Furnitures.AddRange(furnitures);
+                FamJamManager.relativeFolder = txtRootFolder.Text.Trim() + @"\database\revit_reference_geometry";
+
                 MessageBox.Show("HERE");
                 _famJamManager._event.Raise();
 

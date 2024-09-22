@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\SSajedi\Desktop\GitHub\revit_llm\revit_llm\revit_llm\obj\Debug\
+C:\Users\SSajedi\Desktop\GitHub\revit_llm\revit_llm\revit_llm\obj\Release\
 revit_llm
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\SSajedi\Desktop\GitHub\revit_llm\revit_llm\revit_llm\App.xaml
 11151548125
 
@@ -16,5 +16,5 @@ C:\Users\SSajedi\Desktop\GitHub\revit_llm\revit_llm\revit_llm\App.xaml
 451258790524
 MainWindow.xaml;
 
-False
+True
 
