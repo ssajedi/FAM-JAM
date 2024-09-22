@@ -26,7 +26,7 @@ Follow these instructions to enable FAM JAM Plug-in in revit.
 In the provided path, replace `YOUR_REVIT_VERSION` with proper values (e.g., 2023).
 
 # Demo 
-Refer to the following video for an example use case of FAM JAM.
+The following video demonstrates how to use the plug-in having a custom stool spec pdf.
 
 # Future work
 For future work, we are focusing on several key areas of development to enhance system performance and usability even further:
