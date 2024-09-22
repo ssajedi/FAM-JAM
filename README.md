@@ -1,15 +1,22 @@
 # FAM-JAM
 
-Project created for AECTech Hackathon 2024 @ Los Angeles.
+FAM JAM is a Revit Plugin developed during the 2024 [AECTech Hackathon](https://www.aectech.us/la-event). 
 
+# Prerequisites
+In order to use FAM JAM, you will require:
+* Revit
+* OpenAI API key
+  
 # Getting Started
 To use this repository please follow these steps:
-1- Clone the repository using <git>
-2- Create an OpenAI API key
-3- Create secret.txt and add the API Key.
-4- Place secret.txt inside the main project directory. 
-5. [To be added by Frank]
+* Clone the repository using <git>
+* Create an OpenAI API key
+* Create secret.txt and add the API Key.
+* Place secret.txt inside the main project directory. 
+* [To be added by Frank]
 
+# Demo 
+Please refer to the following video for a demonstration of how FAM JAM.
 
 # Team
 
