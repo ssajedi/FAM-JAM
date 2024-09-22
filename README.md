@@ -25,6 +25,16 @@ Follow these instructions to enable FAM JAM Plug-in in revit.
 * Copy `FamJam.addin` to `C:\ProgramData\Autodesk\Revit\Addins\{YOUR_REVIT_VERSION}`
 In the provided path, replace `YOUR_REVIT_VERSION` with proper values (e.g., 2023).
 
+# How to use the plug-in
+* Locate your the repository.
+* Place your revit family files inside `database\revit_reference_geometry`.
+* Place your PDF specifications inside `database\Specs`.
+* Open Revit
+* Select the FAM JAM toolbar inside revit and click on the only icon under this tab.
+* You will be promted to specify the location of your github repository.
+* Click `Generate` 
+* Enjoy! You will see an array of scaled geometry inside revit veiwer, scaled based on the PDF specifications. 
+
 # Demo 
 The following video demonstrates how to use the plug-in having a custom stool spec pdf.
 
