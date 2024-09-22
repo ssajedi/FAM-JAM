@@ -5,7 +5,7 @@ FAM JAM is a Revit Plugin developed during the 2024 [AECTech Hackathon](https://
 # Prerequisites
 In order to use FAM JAM, you will require:
 * Revit
-* OpenAI API key
+* [OpenAI API key](https://platform.openai.com/)
   
 # Getting Started
 To use this repository please follow these steps:
