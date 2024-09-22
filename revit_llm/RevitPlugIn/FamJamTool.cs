@@ -22,10 +22,10 @@ namespace RevitPlugIn
                 throw new ArgumentNullException("commandData");
             }
 
+            
 
             if (MainEntry.thisApp.famJam == null || MainEntry.thisApp.famJam.IsClosed)
             {
-
                 MainEntry.thisApp.famJam = new MainWindow(commandData.Application, MainEntry.thisApp._controlledApplication);
 
                 MainEntry.thisApp.famJam.Show();
