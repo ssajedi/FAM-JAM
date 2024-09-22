@@ -10,8 +10,8 @@ In order to use FAM JAM, you will require:
 * Revit
 * [OpenAI API key](https://platform.openai.com/)
   
-# Getting Started
-To use this repository please follow these steps:
+# Installation
+Follow these instructions to enable FAM JAM Plug-in in revit. 
 ### Part I
 * Clone the repository using <git>
 * Generate an OpenAI API key
@@ -26,7 +26,7 @@ To use this repository please follow these steps:
 In the provided path, replace `YOUR_REVIT_VERSION` with proper values (e.g., 2023).
 
 # Demo 
-Please refer to the following video for a demonstration of how FAM JAM.
+Refer to the following video for an example use case of FAM JAM.
 
 # Future work
 For future work, we are focusing on several key areas of development to enhance system performance and usability even further:
