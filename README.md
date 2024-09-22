@@ -15,8 +15,8 @@ To use this repository please follow these steps:
 ### Part I
 * Clone the repository using <git>
 * Generate an OpenAI API key
-* Create secret.txt and add the API Key.
-* Place secret.txt inside the main project directory. 
+* Create `secret.txt` and add the API Key.
+* Place `secret.txt` inside the main path of your repository . 
 ### Part II (Revit):
 * Locate the repository on your computer.
 * Extract [plugin-files.zip](https://github.com/ssajedi/FAM-JAM/blob/main/plugin-files.zip) which is a file in the main root.
