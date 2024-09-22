@@ -1,5 +1,4 @@
 # FAM-JAM
-https://github.com/ssajedi/FAM-JAM/blob/main/assets/Logo.svg
 <img src="https://github.com/ssajedi/FAM-JAM/blob/main/assets/Logo.svg" width="200">
 #### Intelligent Spec Management for Revit
 
