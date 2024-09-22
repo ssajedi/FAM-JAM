@@ -1,0 +1,10 @@
+C:\Users\FrankL\Documents\GitHub\revit_llm\revit_llm\RevitPlugIn\obj\Debug\RevitPlugIn.csproj.AssemblyReference.cache
+C:\Users\FrankL\Documents\GitHub\revit_llm\revit_llm\RevitPlugIn\obj\Debug\RevitPlugIn.csproj.CoreCompileInputs.cache
+C:\ProgramData\Autodesk\Revit\Addins\2023\FamJam\Magick.Native-Q8-arm64.dll
+C:\ProgramData\Autodesk\Revit\Addins\2023\FamJam\Magick.Native-Q8-x64.dll
+C:\ProgramData\Autodesk\Revit\Addins\2023\FamJam\Magick.Native-Q8-x86.dll
+C:\ProgramData\Autodesk\Revit\Addins\2023\FamJam\RevitPlugIn.dll
+C:\ProgramData\Autodesk\Revit\Addins\2023\FamJam\RevitPlugIn.pdb
+C:\Users\FrankL\Documents\GitHub\revit_llm\revit_llm\RevitPlugIn\obj\Debug\RevitPlu.AA960F39.Up2Date
+C:\Users\FrankL\Documents\GitHub\revit_llm\revit_llm\RevitPlugIn\obj\Debug\RevitPlugIn.dll
+C:\Users\FrankL\Documents\GitHub\revit_llm\revit_llm\RevitPlugIn\obj\Debug\RevitPlugIn.pdb
