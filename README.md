@@ -37,7 +37,7 @@ In the provided path, replace `YOUR_REVIT_VERSION` with proper values (e.g., 202
 
 # Demo 
 The following video demonstrates how to use the plug-in having a custom stool spec pdf.
-[Watch the video](assets/FamJam Recording.mp4)
+[Watch the video](https://github.com/ssajedi/FAM-JAM/blob/main/assets/FamJam%20Recording.mp4)
 
 # Future work
 For future work, we are focusing on several key areas of development to enhance system performance and usability even further:
