@@ -22,5 +22,5 @@ Please refer to the following video for a demonstration of how FAM JAM.
 
 | ![Nehansh Saxena](https://github.com/ssajedi/FAM-JAM/blob/main/assets/nehansh.jpg) | ![Frank(Xu) Li](https://github.com/ssajedi/FAM-JAM/blob/main/assets/Frank.jpg) | ![Seyedomid Sajedi](https://github.com/ssajedi/FAM-JAM/blob/main/assets/Omid.jpg) |
 |:--:|:--:|:--:|
-| [**Nehansh Saxena**]() | [**Frank(Xu) Li**](https://www.linkedin.com/in/frankeng/) | **Seyedomid Sajedi** |
+| [**Nehansh Saxena**](https://www.linkedin.com/in/nehansh-saxena-leed-ga-assoc-aia-137982127/) | [**Frank(Xu) Li**](https://www.linkedin.com/in/frankeng/) | [**Seyedomid Sajedi**](https://www.linkedin.com/in/seyedomid-sajedi-263b703a/) |
 | Architectural Designer<br>S/L/A/M Collaborative<br>Los Angeles, CA | Senior Project Engineer<br>Saiful Bouquet<br>Irvine, CA | Associate AI/ML Engineer<br>Thornton Tomasetti<br>NYC, NY |
