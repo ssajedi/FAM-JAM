@@ -18,12 +18,12 @@ To use this repository please follow these steps:
 * Create secret.txt and add the API Key.
 * Place secret.txt inside the main project directory. 
 ### Part II (Revit):
-* Locate the repository on your machine.
-* Extract [plugin-files.zip](https://github.com/ssajedi/FAM-JAM/blob/main/plugin-files.zip).
+* Locate the repository on your computer.
+* Extract [plugin-files.zip](https://github.com/ssajedi/FAM-JAM/blob/main/plugin-files.zip) which is a file in the main root.
 ⚠️ Please make sure to complete the next two steps in the given sequence. 
 * Copy `FAM JAM` directory after extraction to `C:\ProgramData\Autodesk\Revit\Addins\{YOUR_REVIT_VERSION}`.
 * Copy `FamJam.addin` to `C:\ProgramData\Autodesk\Revit\Addins\{YOUR_REVIT_VERSION}`
-In the provided path, replace `YOUR_REVIT_VERSION` with proper values (e.g., 2023)
+In the provided path, replace `YOUR_REVIT_VERSION` with proper values (e.g., 2023).
 
 # Demo 
 Please refer to the following video for a demonstration of how FAM JAM.
