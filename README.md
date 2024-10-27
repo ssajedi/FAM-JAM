@@ -2,9 +2,9 @@
 
 
 # UPZONE
-**Intelligent Spec Management for Revit**
 
-FAM JAM is a Revit Plugin developed during the 2024 [AECTech Hackathon](https://www.aectech.us/la-event). We created a solution aimed at simplifying specification sheet management for Revit, targeting architectural workflows. Fam Jam allows users to seamlessly integrate Revit families with specification sheets, addressing a common bottleneck by turning families into specs, making the process more intuitive and efficient. 
+UPZONE is an app developed during the 2024 NYC [AECTech Hackathon](https://www.aectech.us/nyc-conference). 
+[Joyce add more stuff]
 
 # Prerequisites
 In order to use UPZone, you will need:
@@ -14,4 +14,4 @@ In order to use UPZone, you will need:
 ## Web search + Gemini experiment
   
 # Installation
-[Elcin]
+[Elcin and Jari]
