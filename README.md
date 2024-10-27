@@ -1,4 +1,4 @@
-<img src="https://github.com/ssajedi/FAM-JAM/blob/main/assets/Logo.png" width="300">
+<img src="[https://github.com/ssajedi/FAM-JAM/blob/main/assets/Logo.png](https://github.com/ssajedi/upzone/blob/main/assets/logo.png)" width="300">
 
 
 # UPZONE
